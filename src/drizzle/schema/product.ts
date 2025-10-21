@@ -7,7 +7,7 @@ export const productStatuses = ["public", "private"] as const;
 export type ProductStatus = (typeof productStatuses)[number];
 export const productStatusEnum = pgEnum("product_status", productStatuses);
 
-export const ProductTable = pgTable("courses", {
+export const ProductTable = pgTable("products", {
   id,
   name: text().notNull(),
   description: text().notNull(),
@@ -21,3 +21,5 @@ export const ProductTable = pgTable("courses", {
 export const ProductRelationships = relations(ProductTable, ({ many }) => ({
   courseProducts: many(CourseProductTable),
 }));
+
+// Aici am ramas: https://youtu.be/OAyQ3Wyyzfg?si=aWdurSeYi4wQezaN&t=2298
